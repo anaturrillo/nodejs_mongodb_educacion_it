@@ -1,0 +1,11 @@
+Vamos a comenzar a trabajar con archivos externos reales en vez de modulos de Node.js o propios, como archivos estaticos de HTML y CSS, etc. y dado que el trabajo necesita un poco de control y estructura vamos a usar NPM para ir controlando la dimension de nuestro proyecto.
+
+1) Crear un archivo de configuracion NPM dentro de la carpeta raiz del proyecto de la clase 01
+
+2) Instalar el paquete de Express.js de manera local en nuestro proyecto creado
+
+3) Refactorizar nuestro viejo servidor HTTP por un servidor Express que siga las mismas reglas de trabajo que nuestro enrutador previo enviando un string como template de cada respuesta y un header de HTML y JSON para las rutas que comenzaban con /api
+
+BONUS 
+
+4) Refactorizar el punto anterior para que no tengamos que enviar un string como representacion de una plantilla HTML sino que enviemos un archivo HTML directamente como stream de datos a traves del servidor

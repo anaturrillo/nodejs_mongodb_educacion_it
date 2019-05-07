@@ -8,7 +8,7 @@ const createFile = callback => {
       fs.writeFile(fd, 'Este texto va en el archivo', (err) => {
         if(!err) {
 
-          fs.close(fd, (err) => {
+          fs.close(fd, err => {
             if(!err){
               callback(null, 'El archivo fue creado con exito')
             } else {

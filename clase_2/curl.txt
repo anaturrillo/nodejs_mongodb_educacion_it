@@ -1,0 +1,6 @@
+curl -X POST -d '{"content":"Un texto que quiero que tenga un archivo"}' -H "Content-Type: application/json" http://localhost:8080/files/otroArchivo3
+
+-d, --data <data>
+-X, --request <METHOD>
+-H, --header <header>
+
