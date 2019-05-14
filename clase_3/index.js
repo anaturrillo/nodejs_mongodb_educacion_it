@@ -8,7 +8,6 @@ const app = express();
 
 // app.use carga una función de midleware. Cada vez que app reciba una solicitud se va a ejecutar la función
 app.use(bodyParser.json()); // parsea body cuando la req tiene Content-Type='application/json'
-app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended:true})); // parsea body cuando la req tiene Content-Type='application/x-www-form-urlencoded'
 app.use('/resources', express.static(path.join(__dirname, 'public'))); // servimos los archivos estáticos en la ruta /resources
 
