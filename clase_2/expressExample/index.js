@@ -2,7 +2,7 @@ const express = require('express');
 const app = express();
 const bodyParser = require('body-parser');
 
-const {createFile, getFiles, getFile} = require('./handlers');
+const {createFile, getFiles, getFile, editFile, removeFile} = require('./handlers');
 
 app.use(bodyParser.urlencoded({extended:true}));
 app.use(bodyParser.json());
