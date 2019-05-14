@@ -74,13 +74,6 @@ app.get('/api/user', (req, res) => {
   })
 });
 
-/*
-app.route('/api/users')
-	.get(getFiles)
-	.post(createFile)
-	.put(editFile)
-	.delete(removeFile);
-*/
 app.listen(3000, () => {
 	console.log('server listening at port 3000')
 });
