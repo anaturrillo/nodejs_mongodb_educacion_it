@@ -2,13 +2,43 @@ const express = require('express');
 const app = express();
 const bodyParser = require('body-parser');
 const createUser = require('./api/createFile');
-const hbs = require('express-handlebars')
+const path = require('path');
+
 
 app.use(bodyParser.json())
 app.use(bodyParser.urlencoded({extended:true}))
 
+const expressHbs = require('express-handlebars');
+const hbs = expressHbs.create({defaultLayout: 'main'});
+//hbs.extname = 'hbs'
+app.engine('handlebars', hbs.engine);
+app.set('view engine', 'handlebars');
+
+app.use('/resources', express.static(path.join(__dirname, 'public')));
+
 app.get('/', (req, res) => {
-  res.send('Hola a todos')
+
+  res.render('home', {
+    layout: 'main',
+    title: 'Inicio',
+    className:'home',
+    saludar: (saludo) => 'Hola!' + saludo,
+    usuario: req.query.usuario
+  })
+})
+
+app.get('/usuarios', (req, res) => {
+  const usuarios = [
+    {"nombre":"Lalo", "apellido":"Landa", "usuario":"lalo_landa"},
+    {"nombre":"Pepe", "apellido":"Gomez", "usuario":"pepe_gomez"},
+    {"nombre":"Pepa", "apellido":"Gomez", "usuario":"pepa_gomez"}
+  ];
+
+  res.render('usuarios',{
+    title: 'Usuarios',
+    className: 'lista-usuarios',
+    usuarios
+  })
 })
 
 app.post('/crearUsuario', (req, res) => {
