@@ -6,7 +6,6 @@ const MongoClient = require('mongodb').MongoClient;
 
 const app = express();
 
-
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended:true}));
 app.use('/resources', express.static(path.join(__dirname, 'public')));
@@ -51,7 +50,7 @@ MongoClient.connect('mongodb://localhost:27017/', function(err, client) {
 
   app.post('/api/user', (req, res) => {
     const user = req.body;
-
+    console.log('USER', user)
     handlers.create(user, (err, data) => {
       if (!err) {
         res.render('userCreated')
