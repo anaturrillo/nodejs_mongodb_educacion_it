@@ -1,0 +1,28 @@
+touch app.js
+npm init
+npm install --save-dev babel-cli babel-preset-env
+touch .babelrc
+	agregar { "presets": ["env"] }
+
+agregar script
+probar flag --out-file, --watch
+
+
+npm install --save webpack webpack-cli
+touch  webpack.config.js
+configurar webpack
+
+agregar babel loader para webpack
+npm install -D babel-loader @babel/core @babel/preset-env webpack
+
+agregar babel loader a configuracion de webpack
+
+cambiar .babelrc { "presets": ["@babel/preset-env"] }
+
+npm install sass-loader node-sass style-loader css-loader --save-dev
+
+npm install --save-dev mini-css-extract-plugin
+
+requerir, configurar
+
+
